@@ -73,6 +73,26 @@ Key configuration options in `config.py`:
 - **Supported**: Firefox, Safari, Edge
 - **Mobile**: iOS Safari, Chrome Mobile
 
+## Deploy on Railway
+
+Railway est la solution la plus simple pour déployer ce projet :
+
+1. **Fork ce repository** sur GitHub
+2. **Connecte-toi sur [Railway](https://railway.app)**
+3. **Clique sur "New Project" → "Deploy from GitHub"**
+4. **Sélectionne ton fork** du repository
+5. **Ajoute les services** :
+   - MongoDB (Add service → Database → MongoDB)
+   - Redis (Add service → Database → Redis)
+6. **Le déploiement se fait automatiquement** !
+
+Railway configure automatiquement les variables d'environnement pour MongoDB et Redis.
+
+### Variables d'environnement optionnelles
+
+- `SECRET_KEY` : Clé secrète pour les sessions (généré automatiquement)
+- `PORT` : Port d'écoute (géré par Railway)
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit issues and pull requests.
