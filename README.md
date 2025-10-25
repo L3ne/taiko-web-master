@@ -73,25 +73,42 @@ Key configuration options in `config.py`:
 - **Supported**: Firefox, Safari, Edge
 - **Mobile**: iOS Safari, Chrome Mobile
 
-## Deploy on Railway
+## Deploy on Vercel
 
-Railway est la solution la plus simple pour déployer ce projet :
+Déploiement serverless sur Vercel (fonctionnalités limitées) :
+
+### Prérequis externes
+
+1. **MongoDB Atlas** : Créer un cluster gratuit sur [mongodb.com](https://mongodb.com)
+2. **Upstash Redis** : Créer une base Redis gratuite sur [upstash.com](https://upstash.com)
+
+### Déploiement
+
+1. **Fork ce repository** sur GitHub
+2. **Connecte-toi sur [Vercel](https://vercel.com)**
+3. **Import ton repository** GitHub
+4. **Configure les variables d'environnement** :
+   - `MONGODB_URI` : Connection string MongoDB Atlas
+   - `MONGODB_DB` : Nom de la base de données
+   - `REDIS_URL` : URL Redis d'Upstash
+   - `SECRET_KEY` : Clé secrète aléatoire
+5. **Deploy** !
+
+### Limitations Vercel
+
+- **Pas de multijoueur** (WebSocket non supporté)
+- **Comptes utilisateurs désactivés** (sessions limitées)
+- **Timeout 30s** par requête
+
+## Deploy on Railway (Recommandé)
+
+Railway supporte toutes les fonctionnalités :
 
 1. **Fork ce repository** sur GitHub
 2. **Connecte-toi sur [Railway](https://railway.app)**
-3. **Clique sur "New Project" → "Deploy from GitHub"**
-4. **Sélectionne ton fork** du repository
-5. **Ajoute les services** :
-   - MongoDB (Add service → Database → MongoDB)
-   - Redis (Add service → Database → Redis)
-6. **Le déploiement se fait automatiquement** !
-
-Railway configure automatiquement les variables d'environnement pour MongoDB et Redis.
-
-### Variables d'environnement optionnelles
-
-- `SECRET_KEY` : Clé secrète pour les sessions (généré automatiquement)
-- `PORT` : Port d'écoute (géré par Railway)
+3. **"New Project" → "Deploy from GitHub"**
+4. **Ajoute MongoDB et Redis** depuis leur interface
+5. **Déploiement automatique** avec toutes les fonctionnalités !
 
 ## Contributing
 
